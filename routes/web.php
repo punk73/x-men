@@ -13,6 +13,7 @@
 
 Route::get('/', 'HeroController@index');
 Route::get('/{id}', 'HeroController@show');
+Route::put('/{id}', 'HeroController@update');
 
 
 Auth::routes();

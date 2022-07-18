@@ -11,6 +11,8 @@ class CrudController extends Controller
     //
 
     protected $model;
+    protected $columns;
+
     public function __construct()
     {
         $this->view = (new $this->model)->getTable();
@@ -35,5 +37,23 @@ class CrudController extends Controller
         return view($this->view. ".detail", ['model' => $model]);
     }
 
+    public function update($id,Request $request) {
+        
+        $model = (new $this->model)->find($id);
+
+        if (!$model) {
+            abort(404, "Data Not Found");
+        }
+
+        $cols = $this->columns;
+        foreach ($cols as $col) {
+            # code...
+            $model->{$col} = $request->{$col};
+        }
+
+        $model->save();
+
+        return back()->with("Message", "Success update!");
+    }
 
 }
