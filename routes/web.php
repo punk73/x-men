@@ -15,6 +15,7 @@ Route::get('/', 'HeroController@index')->name('hero_index');
 Route::get('/{id}', 'HeroController@show');
 Route::put('/{id}', 'HeroController@update');
 Route::delete('/{id}', 'HeroController@delete');
+Route::post('/', 'HeroController@store');
 
 
 Auth::routes();

@@ -69,4 +69,19 @@ class CrudController extends Controller
 
     }
 
+    public function store(Request $request){
+
+        $model = (new $this->model);
+
+        $cols = $this->columns;
+        foreach ($cols as $col) {
+            # code...
+            $model->{$col} = $request->{$col};
+        }
+
+        $model->save();
+
+        return back()->with("message", "Success Add data!");        
+    }
+
 }
