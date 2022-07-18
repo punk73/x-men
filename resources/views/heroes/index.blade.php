@@ -26,12 +26,17 @@
                                 <td>{{$value->jenis_kelamin}}</td>
                                 <td>
                                     <a href="./{{$value->id}}" class="btn btn-info">View Detail</a>
-                                    <button class="btn btn-danger">Hapus</button>
+                                    <button class="btn btn-danger hapus" data-id="{{$value->id}}">Hapus</button>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+
+                    <form id="form-hapus-hero" action="" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                    </form>
                 </div>
             </div>
         </div>
