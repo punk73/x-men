@@ -17,6 +17,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// marry
+Route::get('/marry', 'MarryController@index');
+// Route::get('/marry', 'MarryController@index');
+
+
 // skills
 Route::get('/skills', 'SkillController@index');
 Route::get('/skills/combo', 'SkillController@combo');

@@ -42,6 +42,7 @@
                     Add Hero
                     </button>
                     <a href="./skills" class="btn btn-info">Show Skills</a>
+                    <a href="./marry" class="btn btn-warning">Show Simulasi Pernikahan</a>
                 </div>
             </div>
         </div>
