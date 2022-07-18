@@ -53,7 +53,7 @@ class CrudController extends Controller
 
         $model->save();
 
-        return back()->with("Message", "Success update!");
+        return back()->with("message", "Success update!");
     }
 
 }

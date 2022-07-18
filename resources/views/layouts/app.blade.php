@@ -71,6 +71,17 @@
             </div>
         </nav>
 
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+        @if(session()->has('error'))
+            <div class="alert alert-error">
+                {{ session()->get('error') }}
+            </div>
+        @endif
+
         @yield('content')
     </div>
 
