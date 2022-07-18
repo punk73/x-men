@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HeroController@index');
+Route::get('/{id}', 'HeroController@show');
+
 
 Auth::routes();
 

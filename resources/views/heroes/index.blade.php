@@ -25,7 +25,7 @@
                                 <td>{{$value->name}}</td>
                                 <td>{{$value->jenis_kelamin}}</td>
                                 <td>
-                                    <button class="btn btn-info">View Detail</button>
+                                    <a href="./{{$value->id}}" class="btn btn-info">View Detail</a>
                                     <button class="btn btn-danger">Hapus</button>
                                 </td>
                             </tr>
@@ -37,4 +37,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('javascript')
+<script src="{{ asset('js/index.js') }}"></script>
 @endsection
