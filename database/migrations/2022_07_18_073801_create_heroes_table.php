@@ -15,6 +15,8 @@ class CreateHeroesTable extends Migration
     {
         Schema::create('heroes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 30);
+            $table->string('jenis_kelamin', 20)->nullable();
             $table->timestamps();
         });
     }
