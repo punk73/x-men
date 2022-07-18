@@ -15,6 +15,7 @@
                         {{ method_field('PUT') }}
 
                         <button class="btn btn-info mb-1">Edit</button>
+                        <button type="button" class="btn btn-danger" data-id="{{$model->id}}" id="btn-hapus">Hapus</button>
                         
                         <table class="table" id="hero_table" style="margin-top: 5px">
                             <tbody>
@@ -43,6 +44,11 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </form>
+
+                    <form action="./{{$model->id}}" method="POST" id="form-delete-hero">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
                     </form>
                 </div>
             </div>
@@ -85,4 +91,16 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('javascript')
+    <script>
+        $(document).ready(function(){
+            $('#btn-hapus').on('click', function(){
+                if(confirm("Yakin ingin menghapus ?")){
+                    document.getElementById('form-delete-hero').submit();
+                }
+            })
+        })
+    </script>
 @endsection

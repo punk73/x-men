@@ -10,5 +10,6 @@ class HeroController extends CrudController
     //logic is on CrudController
     protected $model = "App\\Hero";
     protected $columns = ['name','jenis_kelamin'];
+    protected $to = "hero_index";
 
 }

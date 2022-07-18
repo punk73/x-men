@@ -56,4 +56,17 @@ class CrudController extends Controller
         return back()->with("message", "Success update!");
     }
 
+    public function delete($id) {
+        $model = (new $this->model)->find($id);
+
+        if (!$model) {
+            abort(404, "Data Not Found");
+        }
+
+        $model->delete();
+
+        return redirect()->route($this->to)->with('message', "data deleted!");
+
+    }
+
 }
