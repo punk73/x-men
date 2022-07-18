@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Daftar Superhero</div>
+                <div class="panel-heading">Daftar Skills</div>
 
                 <div class="panel-body">
                     {{-- use jquery datatable --}}
@@ -14,7 +14,6 @@
                             <tr>
                                 <td>No</td>
                                 <td>Nama</td>
-                                <td>Jenis Kelamin</td>
                                 <td>Action</td>
                             </tr>
                         </thead>
@@ -23,9 +22,8 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$value->name}}</td>
-                                <td>{{$value->jenis_kelamin}}</td>
                                 <td>
-                                    <a href="./{{$value->id}}" class="btn btn-info">View Detail</a>
+                                    <a href="./skills/{{$value->id}}" class="btn btn-info">View Detail</a>
                                     <button class="btn btn-danger hapus" data-id="{{$value->id}}">Hapus</button>
                                 </td>
                             </tr>
@@ -39,9 +37,9 @@
                     </form>
 
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Add Hero
+                    Add skills
                     </button>
-                    <a href="./skills" class="btn btn-info">Show Skills</a>
+                    <a href="../" class="btn btn-info">Show Heroes</a>
                 </div>
             </div>
         </div>
@@ -51,25 +49,17 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add Hero</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Add Skill</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <form action="./" method="post" id="form-add-hero">
+        <form action="./skills" method="post" id="form-add-hero">
             {{ csrf_field() }}
             <div class="modal-body">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input required type="text" name="name" id="name" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label for="jenis_kelamin">Jenis Kelamin</label>
-                    <select required class="form-control " name="jenis_kelamin" id="jenis_kelamin">
-                        <option value="laki-laki">Laki-laki</option>
-                        <option value="perempuan">Perempuan</option>
-                    </select>
                 </div>
             </div>
             <div class="modal-footer">
@@ -84,5 +74,5 @@
 @endsection
 
 @section('javascript')
-<script src="{{ asset('js/index.js') }}"></script>
+<script src="{{ asset('js/skills.js') }}"></script>
 @endsection

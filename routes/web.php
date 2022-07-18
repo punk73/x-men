@@ -11,13 +11,23 @@
 |
 */
 
-Route::get('/', 'HeroController@index')->name('hero_index');
-Route::get('/{id}', 'HeroController@show');
-Route::put('/{id}', 'HeroController@update');
-Route::delete('/{id}', 'HeroController@delete');
-Route::post('/', 'HeroController@store');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// skills
+Route::get('/skills', 'SkillController@index');
+Route::get('/skills', 'SkillController@index')->name('skill_index');
+Route::get('/skills/{id}', 'SkillController@show');
+Route::put('/skills/{id}', 'SkillController@update');
+Route::delete('/skills/{id}', 'SkillController@delete');
+Route::post('/skills/', 'SkillController@store');
+
+Route::get('/', 'HeroController@index')->name('hero_index');
+Route::get('/{id}', 'HeroController@show')->where('id', '[0-9]+');
+Route::put('/{id}', 'HeroController@update');
+Route::delete('/{id}', 'HeroController@delete');
+Route::post('/', 'HeroController@store');
+
