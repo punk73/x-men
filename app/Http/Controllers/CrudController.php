@@ -128,7 +128,7 @@ class CrudController extends Controller
         }
 
         $relationsName = $model->getTable();
-        $src->{$relationsName}()->attach($ids);
+        $src->{$relationsName}()->syncWithoutDetaching($ids);
 
         return back()->with('message', "great!");
     }
