@@ -19,8 +19,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // skills
 Route::get('/skills', 'SkillController@index');
+Route::get('/skills/combo', 'SkillController@combo');
 Route::get('/skills', 'SkillController@index')->name('skill_index');
-Route::get('/skills/{id}', 'SkillController@show');
+Route::get('/skills/{id}', 'SkillController@show')->where('id', '[0-9]+');
 Route::put('/skills/{id}', 'SkillController@update');
 Route::delete('/skills/{id}', 'SkillController@delete');
 Route::post('/skills/', 'SkillController@store');
@@ -30,4 +31,6 @@ Route::get('/{id}', 'HeroController@show')->where('id', '[0-9]+');
 Route::put('/{id}', 'HeroController@update');
 Route::delete('/{id}', 'HeroController@delete');
 Route::post('/', 'HeroController@store');
+Route::post('/{id}/skills', 'HeroController@attach');
+Route::delete('/{id}/skills', 'HeroController@detach');
 
