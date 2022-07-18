@@ -39,7 +39,7 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Add skills
                     </button>
-                    <a href="../" class="btn btn-info">Show Heroes</a>
+                    <a href="./" class="btn btn-info">Show Heroes</a>
                 </div>
             </div>
         </div>
